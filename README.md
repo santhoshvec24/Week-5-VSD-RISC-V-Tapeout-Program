@@ -29,7 +29,7 @@ In this experiment, we utilize OpenROAD Flow Scripts to carry out the Floorplann
 
 ## OpenROAD
 
-- [**Floorplan+Placement**](Floorplan+Placement/README.md)
+- [**Floorplan+Placement**](floorplan%2Bplacement.md)
 
 ---
 
