@@ -2,6 +2,7 @@
 `19/10/2025` to `25/10/2025`
 
 In this experiment, we utilize OpenROAD Flow Scripts to carry out the Floorplanning and Placement stages of the physical design flow for the GCD circuit. This experiment signifies the transition from the SPICE-level transistor design (Week 4) to the backend implementation phase, where the synthesized GCD logic is converted into an actual physical layout using automated EDA tools.
+
 ---
 
 ## Table of Contents
