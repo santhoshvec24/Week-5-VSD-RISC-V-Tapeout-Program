@@ -51,10 +51,6 @@ and install the `or-tools` using,
 cmake --build build --config Release --target install -v
 ```
 
-This will take an hour or more be warned.
-
-![ortools](Images/ortools.png)
-
 ---
 
 Then to set OpenROAD up,
@@ -80,10 +76,6 @@ mkdir build
 cd build
 sudo cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-Wno-error" -DCMAKE_PREFIX_PATH="/usr/local" -DCMAKE_CXX_COMPILER=/usr/bin/g++-9
 ```
-
-This too will take more than an hour.
-
-![oproad](Images/oproad.png)
 
 ---
 
