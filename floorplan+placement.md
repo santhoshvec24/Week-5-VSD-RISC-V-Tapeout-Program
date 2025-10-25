@@ -87,7 +87,6 @@ Clone the [OpenROAD Flow Scripts repo](https://github.com/The-OpenROAD-Project/O
 git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
 cd OpenROAD-flow-scripts
 ```
-![flowscipts](Images/flowscripts.png)
 
 Then to map the installed OpenROAD, and previously installed OpenSTA and Yosys, simply following the commands below,
 
@@ -117,7 +116,7 @@ To run floorplan of this module, follow the below commands
 make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk floorplan
 ```
 
-![floorplan](Images/floorplan.png)
+<img width="1920" height="922" alt="Screenshot from 2025-10-25 23-40-33" src="https://github.com/user-attachments/assets/da19b4ec-3501-4384-b2a4-56e10e9ce412" />
 
 then, to view the gui,
 
@@ -125,7 +124,8 @@ then, to view the gui,
 make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk gui_floorplan
 ```
 
-![floorplangui](Images/floorplangui.png)
+<img width="1920" height="922" alt="Screenshot from 2025-10-25 23-40-59" src="https://github.com/user-attachments/assets/9800fc23-326c-4c37-8558-201ba4e47430" />
+
 
 ---
 
@@ -137,7 +137,8 @@ To run placement for this module, use the following command:
 make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk place
 ```  
 
-![placement](Images/placement.png)
+<img width="1920" height="922" alt="Screenshot from 2025-10-25 23-54-08" src="https://github.com/user-attachments/assets/1aa182ef-03c5-4b61-9ea8-3ddda1e00f45" />
+
 
 This will generate the placement for the module.  
 
@@ -146,10 +147,6 @@ To view the placement in the GUI, run:
 ```bash
 make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk gui_place
 ```
-
-![placementgui](Images/placementgui.png)
-
-![skycells](Images/skycells.png)
 
 ---
 
