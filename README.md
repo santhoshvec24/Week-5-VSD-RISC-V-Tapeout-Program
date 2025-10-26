@@ -1,7 +1,7 @@
 # Week-5-VSD-RISC-V-Tapeout-Program
 `19/10/2025` to `25/10/2025`
 
-In this experiment, we utilize OpenROAD Flow Scripts to carry out the Floorplanning and Placement stages of the physical design flow for the GCD circuit. This experiment signifies the transition from the SPICE-level transistor design (Week 4) to the backend implementation phase, where the synthesized GCD logic is converted into an actual physical layout using automated EDA tools.
+This experiment utilizes **OpenROAD Flow Scripts** to execute the Floorplanning and Placement stages of the physical design flow for the GCD circuit, representing the shift from the SPICE-level transistor design (Week 4) to the backend implementation phase, where the synthesized logic is realized as a physical layout through automated EDA tools.
 
 ---
 
@@ -16,13 +16,13 @@ In this experiment, we utilize OpenROAD Flow Scripts to carry out the Floorplann
 
 ## Objectives
 
-- Set up the **OpenROAD Flow Scripts** environment for physical design automation.
+- Configured the OpenROAD Flow Scripts environment to automate the physical design process.
 
-- Execute the **Floorplan** and **Placement** stages of the backend implementation flow.
+- Performed the Floorplanning and Placement stages as part of the backend implementation flow.
 
-- Transition from **SPICE-level transistor design (Week 4)** to the **physical layout** stage.
+- Progressed from SPICE-level transistor design (Week 4) to the physical layout development phase.
 
-- Understand how synthesized logic is transformed into an **actual chip layout** using EDA tools.
+- Gained an in-depth understanding of how synthesized digital logic is converted into an actual chip layout using EDA tools..
 
 
 ---
