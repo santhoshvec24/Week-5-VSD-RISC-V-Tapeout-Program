@@ -11,8 +11,8 @@ Table of Contents
 3. [Importance of Floorplanning and Placement](#importance-of-floorplanning-and-placement)
    - [Installation of OpenROAD](#installation-of-openroad)
    - [Installation of Flow Scripts](#installation-of-flow-scripts)
-4. [Floorplan of `gcd`](#floorplan-of-gcd)
-5. [Placement of `gcd`](#placement-of-gcd)
+4. [Floorplan of gcd](#floorplan-of-gcd)
+5. [Placement of gcd](#placement-of-gcd)
 6. [Summary](#summary)
 
 ---
