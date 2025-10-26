@@ -1,34 +1,72 @@
 # Floorplan and Placement of GCD 
 
-This lab focuses on using **OpenROAD Flow Scripts** to carry out the **Floorplan** and **Placement** stages for the **GCD** circuit. It demonstrates the transition from logic-level design to the **physical layout** stage in the VLSI backend flow.
+This laboratory guide provides comprehensive instructions for implementing **Floorplanning** and **Placement** stages of the **Greatest Common Divisor (GCD)** circuit using **OpenROAD** Flow Scripts. The workflow demonstrates the critical transition from logical design representation to physical layout implementation in the VLSI backend design flow.
 
 ---
 
-## Table of Contents
+Table of Contents
 
-1. [Floorplan and Placement of GCD](#floorplan-and-placement-of-gcd)
-2. [Installation of OpenROAD Flow](#installation-of-openroad-flow)
-   - [Installation of OpenROAD](#installation-of-openroad)
-   - [Installation of Flow Scripts](#installation-of-flow-scripts)
-3. [Floorplan of `gcd`](#floorplan-of-gcd)
-4. [Placement of `gcd`](#placement-of-gcd)
-5. [Summary](#summary-floorplan-and-placement-of-gcd-using-openroad-flow-scripts)
+1. [Overview]()
+3. [Importance of Floorplanning and Placement](#importance-of-floorplanning-and-placement)
 
 ---
 
-## Installation of OpenROAD Flow
+## Overview
 
-Before setting up **OpenROAD Flow Scripts**, ensure the following requirements are met:
+This tutorial demonstrates the physical design implementation of a GCD circuit, focusing on two critical stages of the VLSI backend flow:
 
-- **Operating System:** Ubuntu 20.04 or later (preferably Ubuntu 22.04) [I'm using `Zorin OS` which is based on Ubuntu 22.04]
-- **Git:** Required for cloning repositories.
-- **Build Tools:** Includes CMake, GCC/G++, Make, and standard development libraries needed for compiling the flow.
-- **Python 3:** Version 3.6 or higher is recommended.
-- **EDA Tools:**
-  - **OpenROAD** – for placement and routing.
-  - **Yosys** – for logic synthesis.
-  - **OpenSTA** – for static timing analysis.
+- **Floorplanning**: Defining the chip's physical boundaries, I/O pad placement, and macro positioning
+- **Placement**: Positioning standard cells within the defined floorplan area
 
+These stages establish the foundation for subsequent routing and timing closure operations.
+
+
+
+## Prerequisites and Environment Setup
+
+### System Requirements
+
+Ensure your development environment meets the following specifications:
+
+- **Operating System**: Ubuntu 20.04 or later (Ubuntu 22.04 recommended)
+
+- **Version Control**: Git (latest stable version)
+- **Build Toolchain**:
+
+   - CMake (version 3.14 or higher)
+   - GCC/G++ compiler suite
+   - GNU Make
+   - Standard development libraries
+
+- **Python Environment**: Python 3.6 or higher
+
+- **Required EDA Tools**
+The following Electronic Design Automation tools must be available:
+
+- **OpenROAD**: Physical design automation platform
+- **Yosys**: Logic synthesis framework
+- **OpenSTA**: Static timing analysis engine
+
+---
+
+## Importance of Floorplanning and Placement
+
+Floorplanning is a crucial stage in the physical design process that defines the overall structure and layout of the chip prior to cell placement. It includes:
+
+- Determining the die and core dimensions.
+- Positioning I/O pads along the die periphery.
+- Strategically arranging macros (such as SRAMs and PLLs).
+- Organizing the core area into standard cell rows.
+- Designing an efficient power distribution network (PDN).
+- Reserving regions for physical-only cells (e.g., tap cells, endcaps, and blockages).
+
+Placement follows floorplanning and involves arranging standard cells and smaller functional blocks within the defined core area. The main objectives are to:
+
+- Minimize interconnect wire length between connected cells.
+- Reduce routing congestion to facilitate efficient interconnections.
+- Satisfy timing requirements to ensure reliable circuit performance.
+
+---
 
 ### Installation of OpenROAD
 
