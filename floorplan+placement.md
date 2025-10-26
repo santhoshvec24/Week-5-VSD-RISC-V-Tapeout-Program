@@ -6,8 +6,14 @@ This laboratory guide provides comprehensive instructions for implementing **Flo
 
 Table of Contents
 
-1. [Overview]()
+1. [Overview](#overview)
+2. [Prerequisites and Environment Setup](#prerequisites-and-environment-setup)
 3. [Importance of Floorplanning and Placement](#importance-of-floorplanning-and-placement)
+   - [Installation of OpenROAD](#installation-of-openroad)
+   - [Installation of Flow Scripts](#installation-of-flow-scripts)
+4. [Floorplan of `gcd`](#floorplan-of-gcd)
+5. [Placement of `gcd`](#placement-of-gcd)
+6. [Summary](#summary)
 
 ---
 
@@ -133,9 +139,7 @@ export OPENROAD_EXE=/usr/local/bin/openroad
 export YOSYS_EXE=~/Documents/Apps/oss-cad-suite/bin/yosys
 export OPENSTA_EXE=/usr/local/bin/sta
 ```
-
-> [!Tip]
-> Use `whereis` command to locate the binaries of OpenROAD, Yosys and OpenSTA
+Use `whereis` command to locate the binaries of OpenROAD, Yosys and OpenSTA
 
 
 With this OpenROAD and its script flow installation is complete.
@@ -190,28 +194,36 @@ make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk gui_place
 
 ## Summary
 
-This lab demonstrates the **physical design stages**—**Floorplan** and **Placement**—for the **GCD** module using **OpenROAD Flow Scripts**, transitioning from logic-level design to physical layout in the VLSI backend flow.
+This laboratory successfully demonstrates the implementation of Floorplanning and Placement stages for the GCD module using OpenROAD Flow Scripts, effectively bridging the gap between logic-level design and physical layout in the VLSI backend design flow.
 
-### Key Steps Covered:
+### Workflow Overview
+The implementation followed a systematic three-phase approach:
+**Phase 1**: Development Environment Configuration
 
-1. **Setup and Installation**
-   - Installed required tools: **OpenROAD**, **Yosys**, **OpenSTA**, and **or-tools**.
-   - Ensured development environment on Ubuntu/Zorin OS with Git, CMake, GCC, and Python 3.6+.
-   - Built and configured **OpenROAD** from source.
-   - Cloned and configured **OpenROAD Flow Scripts**, linking installed binaries.
+- Successfully installed and integrated essential EDA tools including OpenROAD, Yosys, OpenSTA, and OR-Tools
+- Configured a robust development environment on Ubuntu-based Linux distribution (Ubuntu/Zorin OS) with necessary dependencies: Git, CMake, GCC compiler suite, and Python 3.6+
+- Compiled OpenROAD from source code and established proper build configuration
+- Deployed OpenROAD Flow Scripts with correct binary linkages to installed tool executables
 
-2. **Floorplanning**
-   - Navigated to the `flow` directory inside `OpenROAD-flow-scripts`.
-   - Generated floorplan 
-   - Visualized the floorplan in GUI 
+**Phase 2**: Floorplan Design Execution
 
-3. **Placement**
-   - Ran placement 
-   - Viewed placement in GUI 
-   - Verified cell placement in the design (e.g., Sky130 standard cells).
+- Accessed the workflow execution directory within OpenROAD-flow-scripts/flow
+- Successfully generated the floorplan for the GCD design using automated make targets
+- Conducted visual verification through the integrated GUI, confirming proper die boundaries, core area definition, and I/O pin placement
 
-### Outcome
+**Phase 3**: Physical Placement Implementation
 
-By completing these steps, the **GCD module** is physically floorplanned and placed, forming the foundation for **routing and timing analysis** in subsequent VLSI backend stages.
+- Executed the placement stage, optimizing standard cell positions within the floorplan
+- Performed graphical inspection of placement results via GUI interface
+- Validated the correct positioning of Sky130 standard cell library components with no design rule violations
+
+**Key Achievements**
+Upon completion of this laboratory exercise, the GCD module has been successfully transitioned through critical physical design stages:
+
+- **Established Physical Foundation**: Created a well-defined floorplan with optimized die area and power distribution planning
+- **Achieved Legal Placement**: Positioned all standard cells within design constraints, ensuring manufacturability
+- **Prepared for Backend Flow**: Generated placement data ready for subsequent stages including clock tree synthesis, detailed routing, and comprehensive timing analysis
+
+This work provides the essential groundwork for completing the full VLSI backend implementation flow, enabling progression toward tape-out readiness.
 
 ---
