@@ -198,6 +198,7 @@ This laboratory successfully demonstrates the implementation of Floorplanning an
 
 ### Workflow Overview
 The implementation followed a systematic three-phase approach:
+
 **Phase 1**: Development Environment Configuration
 
 - Successfully installed and integrated essential EDA tools including OpenROAD, Yosys, OpenSTA, and OR-Tools
