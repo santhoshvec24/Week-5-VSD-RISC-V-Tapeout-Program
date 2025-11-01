@@ -239,6 +239,7 @@ cd ~/OpenROAD-flow-scripts/flow
 make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk
 ```
 
+<img width="1366" height="768" alt="Screenshot from 2025-10-30 22-25-37" src="https://github.com/user-attachments/assets/69db5727-2fe4-4651-9419-ae2a310a4977" />
 
 
 
