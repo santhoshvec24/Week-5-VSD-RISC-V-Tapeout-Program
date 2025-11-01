@@ -135,9 +135,9 @@ cd OpenROAD-flow-scripts
 Then to map the installed OpenROAD, and previously installed OpenSTA and Yosys, simply following the commands below,
 
 ```bash
-export OPENROAD_EXE=/usr/local/bin/openroad
-export YOSYS_EXE=~/Documents/Apps/oss-cad-suite/bin/yosys
-export OPENSTA_EXE=/usr/local/bin/sta
+export OPENROAD_EXE=/usr/bin/openroad
+export YOSYS_EXE=/usr/bin/yosys
+export OPENSTA_EXE=/usr/bin/sta
 ```
 Use `whereis` command to locate the binaries of OpenROAD, Yosys and OpenSTA
 
@@ -146,49 +146,101 @@ With this OpenROAD and its script flow installation is complete.
 
 ---
 
-## Floorplan of `gcd` 
-
-Navigate to the `flow` directory inside `OpenROAD-flow-scripts` 
-
-This is where the flow of our required module `gcd` will take place 
-
-To run floorplan of this module, follow the below commands 
+### After installing Lemon via:
 
 ```bash
-make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk floorplan
+sudo apt-get update
+sudo apt-get install -y liblemon-dev
+lemon --version
 ```
+If that prints LEMON, `version 1.3.1` (or similar), everything’s fine.
 
-<img width="1920" height="922" alt="Screenshot from 2025-10-25 23-40-33" src="https://github.com/user-attachments/assets/da19b4ec-3501-4384-b2a4-56e10e9ce412" />
-
-then, to view the gui,
-
+If it isn't working, then update all packages in ubuntu and you can able to see this by using the following command 
 ```bash
-make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk gui_floorplan
+sudo apt list --upgradable
 ```
-
-<img width="1920" height="922" alt="Screenshot from 2025-10-25 23-40-59" src="https://github.com/user-attachments/assets/9800fc23-326c-4c37-8558-201ba4e47430" />
-
 
 ---
 
-## Placement of `gcd`
 
-To run placement for this module, use the following command:  
-
-```bash
-make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk place
-```  
-
-<img width="1920" height="922" alt="Screenshot from 2025-10-25 23-54-08" src="https://github.com/user-attachments/assets/1aa182ef-03c5-4b61-9ea8-3ddda1e00f45" />
-
-
-This will generate the placement for the module.  
-
-To view the placement in the GUI, run:  
+### Check whether Docker is installed
 
 ```bash
-make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk gui_place
+docker --version
 ```
+If Docker is installed, you’ll see something like:
+```bash
+Docker version 27.1.1, build ...
+```
+If you get:
+```
+Command 'docker' not found
+```
+then it’s not installed yet.
+then
+
+### Run the official install commands:
+```bash
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
+  | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+Check that Docker daemon is running
+
+After installation:
+```bash
+sudo systemctl status docker
+```
+
+If it says inactive (dead), start it:
+```bash
+sudo systemctl start docker
+```
+
+and enable auto-start:
+```bash
+sudo systemctl enable docker
+```
+Next step: run the OpenROAD Flow Docker container
+
+The image name in your earlier command was outdated.
+Use the official current image instead:
+```bash
+sudo docker run --rm -it \
+  -v $(pwd):/OpenROAD-flow-scripts \
+  openroad/flow:latest
+```
+Explanation:
+
+- --rm → automatically cleans up the container when it exits
+
+- -it → interactive terminal
+
+- -v $(pwd):/OpenROAD-flow-scripts → mounts your current folder into the container
+
+- openroad/flow:latest → official OpenROAD Docker image (replaces the old “flow-ubuntu22.04-builder” image)
+
+
+```bash
+export OPENROAD_EXE=/usr/bin/openroad
+export YOSYS_EXE=/usr/bin/yosys
+export OPENSTA_EXE=/usr/bin/sta
+cd ~/OpenROAD-flow-scripts
+./setup.sh -tool yosys
+cd ~/OpenROAD-flow-scripts/flow
+make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk
+```
+
+
+
 
 ---
 
