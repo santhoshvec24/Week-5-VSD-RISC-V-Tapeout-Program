@@ -365,6 +365,7 @@ then config.mk in vsdbabysoc which we created should contains the following:
    export MAGIC_EXT_USE_GDS    = 1
 ```
 
+<img width="1302" height="759" alt="image" src="https://github.com/user-attachments/assets/1c0e02e1-15dc-45d4-afeb-90285ed305e7" />
 
 
 
