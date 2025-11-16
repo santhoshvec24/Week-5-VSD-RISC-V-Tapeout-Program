@@ -136,7 +136,7 @@ Then to map the installed OpenROAD, and previously installed OpenSTA and Yosys, 
 
 ```bash
 export OPENROAD_EXE=/usr/bin/openroad
-export YOSYS_EXE=/usr/bin/yosys
+export YOSYS_EXE=/home/vboxuser/oss-cad-suite/bin/yosys
 export OPENSTA_EXE=/usr/bin/sta
 ```
 Use `whereis` command to locate the binaries of OpenROAD, Yosys and OpenSTA
@@ -231,7 +231,7 @@ Explanation:
 
 ```bash
 export OPENROAD_EXE=/usr/bin/openroad
-export YOSYS_EXE=/usr/bin/yosys
+export YOSYS_EXE=/home/vboxuser/oss-cad-suite/bin/yosys
 export OPENSTA_EXE=/usr/bin/sta
 cd ~/OpenROAD-flow-scripts
 ./setup.sh -tool yosys
