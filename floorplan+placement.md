@@ -241,7 +241,7 @@ make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk
 
 <img width="1366" height="768" alt="Screenshot from 2025-10-30 22-25-37" src="https://github.com/user-attachments/assets/69db5727-2fe4-4651-9419-ae2a310a4977" />
 
-or you can able to just install the OpenROAD-flow-scripts and or tools then just use the following commands
+or you can able to just install the OpenROAD-flow-scripts and or tools then just use the following commands which is recommended.
 
 ```bash
 cd ~/OpenROAD-flow-scripts/tools/OpenROAD
@@ -264,6 +264,13 @@ Enable in VM settings:
 This reduces UI freeze.
 
 <img width="1243" height="737" alt="image" src="https://github.com/user-attachments/assets/0abadedc-a0a1-46eb-9144-069ab660a85e" />
+
+
+
+
+
+
+
 
 ---
 
